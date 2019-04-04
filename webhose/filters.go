@@ -1,5 +1,12 @@
 package webhose
 
+import (
+	"encoding/json"
+	"log"
+	"net/http"
+	"time"
+)
+
 // News news and blog articles
 type News struct {
 	Posts            []Posts `json:"posts"`
@@ -55,7 +62,7 @@ type Thread struct {
 	ParticipantsCount int      `json:"participants_count"`
 	SiteType          string   `json:"site_type"`
 	Country           string   `json:"country"`
-	SpamScore         int      `json:"spam_score"`
+	SpamScore         float32  `json:"spam_score"`
 	MainImage         string   `json:"main_image"`
 	PerformanceScore  int      `json:"performance_score"`
 	DomainRank        int      `json:"domain_rank"`
@@ -82,4 +89,31 @@ type Facebook struct {
 // Shares number of social shares
 type Shares struct {
 	Shares int `json:"shares"`
+}
+
+// GetArticles returns news articles
+func GetArticles(client *NewsClient) News {
+
+	data := new(News)
+
+	parameters := getParameters(client)
+
+	// call API
+	cl := &http.Client{Timeout: 10 * time.Second}
+	url := baseurl + "/filterWebContent?" + parameters
+	resp, err := cl.Get(url)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	defer resp.Body.Close() // close response
+
+	// Unmarshall
+	err = json.NewDecoder(resp.Body).Decode(&data)
+	if err != nil {
+		log.Panic(err)
+	}
+
+	return (*data)
 }
