@@ -1,11 +1,9 @@
 package webhose
 
-import (
-	"encoding/json"
-	"log"
-	"net/http"
-	"time"
-)
+// Articles pages of news articles
+type Articles struct {
+	News []News
+}
 
 // News news and blog articles
 type News struct {
@@ -92,28 +90,22 @@ type Shares struct {
 }
 
 // GetArticles returns news articles
-func GetArticles(client *NewsClient) News {
+func GetArticles(client *NewsClient, pages int) *Articles {
 
-	data := new(News)
-
-	parameters := getParameters(client)
-
-	// call API
-	cl := &http.Client{Timeout: 10 * time.Second}
-	url := baseurl + "/filterWebContent?" + parameters
-	resp, err := cl.Get(url)
-
-	if err != nil {
-		log.Fatal(err)
+	if pages == 0 {
+		pages = 1
 	}
 
-	defer resp.Body.Close() // close response
+	articles := new(Articles)
 
-	// Unmarshall
-	err = json.NewDecoder(resp.Body).Decode(&data)
-	if err != nil {
-		log.Panic(err)
+	url := client.constructURL()
+	page := callAPI(url)
+
+	for i := 0; i < pages; i++ {
+		url := buildPageURL(page.Next)
+		page := callAPI(url)
+		articles.News = append(articles.News, page)
 	}
 
-	return (*data)
+	return (articles)
 }
