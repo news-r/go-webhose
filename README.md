@@ -10,8 +10,6 @@ Access [webhose.io](https://webhose.io) API from golang.
 go get github.com/JohnCoene/go-webhose
 ```
 
-## Documentation
-
 Documentation is on [godoc](https://godoc.org/github.com/JohnCoene/go-webhose/webhose)
 
 ## Example
