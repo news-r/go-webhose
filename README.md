@@ -1,4 +1,4 @@
-[![](https://img.shields.io/badge/godoc-reference-5272B4.svg?style=flat-square)](https://godoc.org/github.com/JohnCoene/go-webhose/webhose) [![Go Report Card](https://goreportcard.com/badge/github.com/JohnCoene/go-webhose)](https://goreportcard.com/report/github.com/JohnCoene/go-webhose)
+[![](https://img.shields.io/badge/godoc-reference-5272B4.svg?style=flat-square)](https://godoc.org/github.com/news-r/go-webhose/webhose) [![Go Report Card](https://goreportcard.com/badge/github.com/news-r/go-webhose)](https://goreportcard.com/report/github.com/JohnCoene/go-webhose)
 
 # go-webhose
 
@@ -7,7 +7,7 @@ Access [webhose.io](https://webhose.io) API from golang.
 ## Install
 
 ```bash
-go get github.com/JohnCoene/go-webhose
+go get github.com/news-r/go-webhose
 ```
 
 Documentation is on [godoc](https://godoc.org/github.com/JohnCoene/go-webhose/webhose)
