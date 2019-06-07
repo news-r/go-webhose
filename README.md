@@ -1,4 +1,4 @@
-[![](https://img.shields.io/badge/godoc-reference-5272B4.svg?style=flat-square)](https://godoc.org/github.com/news-r/go-webhose/webhose) [![Go Report Card](https://goreportcard.com/badge/github.com/news-r/go-webhose)](https://goreportcard.com/report/github.com/JohnCoene/go-webhose)
+[![](https://img.shields.io/badge/godoc-reference-5272B4.svg?style=flat-square)](https://godoc.org/github.com/news-r/go-webhose/webhose) [![Go Report Card](https://goreportcard.com/badge/github.com/news-r/go-webhose)](https://goreportcard.com/report/github.com/news-r/go-webhose)
 
 # go-webhose
 
