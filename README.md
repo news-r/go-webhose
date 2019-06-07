@@ -10,7 +10,7 @@ Access [webhose.io](https://webhose.io) API from golang.
 go get github.com/news-r/go-webhose
 ```
 
-Documentation is on [godoc](https://godoc.org/github.com/JohnCoene/go-webhose/webhose)
+Documentation is on [godoc](https://godoc.org/github.com/news-r/go-webhose/webhose)
 
 ## Example
 
@@ -29,5 +29,4 @@ func main() {
 
 	fmt.Println(news.News)
 }
-
 ```
