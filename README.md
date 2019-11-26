@@ -5,7 +5,7 @@ Access [webhose.io](https://webhose.io) API from golang.
 ## Install
 
 ```bash
-go get github.com/JohnCoene/go-webhose
+go get github.com/JohnCoene/go-webhose/webhose
 ```
 
 ## Example
